@@ -5,6 +5,12 @@ public class Car {
     private int MaxSpeed;
     private int NumberOfSeats;
 
+    public Car(String brand, int maxSpeed, int numberOfSeats) {
+        Brand = brand;
+        MaxSpeed = maxSpeed;
+        NumberOfSeats = numberOfSeats;
+    }
+
     public String getBrand() {
         return Brand;
     }
