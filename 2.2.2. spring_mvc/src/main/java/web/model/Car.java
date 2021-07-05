@@ -1,6 +1,9 @@
 package web.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
+
 
 public class Car {
     private String Brand;
