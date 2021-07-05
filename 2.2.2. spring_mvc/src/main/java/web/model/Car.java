@@ -1,9 +1,24 @@
-package web.Model;
+package web.model;
+
+import java.util.Objects;
 
 public class Car {
     private String Brand;
     private int MaxSpeed;
     private int NumberOfSeats;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return MaxSpeed == car.MaxSpeed && NumberOfSeats == car.NumberOfSeats && Brand.equals(car.Brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Brand, MaxSpeed, NumberOfSeats);
+    }
 
     public Car(String brand, int maxSpeed, int numberOfSeats) {
         Brand = brand;
