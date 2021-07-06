@@ -8,20 +8,23 @@ import java.util.List;
 
 @Service
 public class ServiceListCarImpl implements ServiceListCar {
-    private List<Car> carList = new ArrayList<>();
 
-    public void addListCar(Car car) {
-        carList.add(car);
-    }
+    public List<Car> getCarList(int count){
+        List<Car> listCar = new ArrayList<>();
+        List<Car> listOfCarsRequiredLength = new ArrayList<>();
 
-    public List<Car> sortListCar(int n){
-        List<Car> sortCarList = new ArrayList<>();
-        if (n > 5) {
-            n = 5;
+        listCar.add(new Car("Mazda",200,4));
+        listCar.add(new Car("Mitsubishi",250,2));
+        listCar.add(new Car("Volkswagen",150,4));
+        listCar.add(new Car("BMW",220,2));
+        listCar.add(new Car("Ford",190,4));
+
+        if (count > 5) {
+            count = 5;
         }
-        for (int i=0; i <= (n -1); i++){
-            sortCarList.add(i, carList.get(i));
+        for (int i=0; i <= (count -1); i++){
+            listOfCarsRequiredLength.add(i, listCar.get(i));
         }
-        return sortCarList;
+        return listOfCarsRequiredLength;
     }
 }

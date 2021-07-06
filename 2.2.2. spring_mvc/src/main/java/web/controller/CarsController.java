@@ -14,12 +14,7 @@ public class CarsController {
     ServiceListCar serviceListCar;
     @GetMapping("/cars")
     public String listCars (@RequestParam (value = "count", defaultValue = "5") int count, ModelMap model){
-        serviceListCar.addListCar(new Car("Mazda",200,4));
-        serviceListCar.addListCar(new Car("Mitsubishi",250,2));
-        serviceListCar.addListCar(new Car("Volkswagen",150,4));
-        serviceListCar.addListCar(new Car("BMW",220,2));
-        serviceListCar.addListCar(new Car("Ford",190,4));
-        model.addAttribute("carList", serviceListCar.sortListCar(count));
+        model.addAttribute("carList", serviceListCar.getCarList(count));
         return "cars";
     }
 }
